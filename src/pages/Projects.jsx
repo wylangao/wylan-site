@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const projects = [
   {
     title: 'Public Health: Flint Michigan Water Crisis',
@@ -7,6 +9,7 @@ const projects = [
     description:
       'Scraped U.S. Census data and EBLL readings in Michigan to validate Dr. Mona Hanna-Attisha\'s landmark study on elevated blood lead levels in children. Mapped spatial areas of high lead exposure and economic disparity at the ZIP code level using GIS, validating findings through statistical modeling in Python.',
     link: null,
+    image: null,
   },
   {
     title: '2024 Hawkeye Datathon — 2nd Place',
@@ -16,6 +19,7 @@ const projects = [
     description:
       'Developed a Random Forest model using demographic data to predict student enrollment at a Midwestern university. Awarded Second Place for Best Presentation out of 16 competing teams.',
     link: null,
+    image: null,
   },
   {
     title: 'Bradley & Riley PC — Employment Law Invoice Analysis',
@@ -25,6 +29,7 @@ const projects = [
     description:
       'Scraped retention invoice PDFs with Python and performed exploratory data analysis to surface actionable insights. Coordinated with attorney Joseph Younker to identify KPIs showing which lawyers received Chubb adjustments, enabling accurate follow-up and streamlined case management.',
     link: null,
+    image: null,
   },
   {
     title: 'Campus Energy Usage Forecasting',
@@ -34,6 +39,7 @@ const projects = [
     description:
       'Built a multiple linear regression model with best subset selection to forecast peak campus electricity usage. Created a Power BI dashboard that instantly flags buildings with unusually high consumption using confidence interval metrics, replacing a manual month-long process.',
     link: null,
+    image: '/HighUsageDash.png',
   },
   {
     title: 'Flight Plan Package Retrieval App',
@@ -43,10 +49,13 @@ const projects = [
     description:
       'Replaced an outdated Unix Bash query with a Python application enabling instantaneous data retrieval. Built a Tkinter frontend with a PyODBC-powered backend to execute and manage queries on a PostgreSQL database.',
     link: null,
+    image: null,
   },
 ]
 
 export default function Projects() {
+  const [expanded, setExpanded] = useState(null)
+
   return (
     <div className="max-w-5xl mx-auto px-8 py-14">
       <div className="md:grid md:grid-cols-[280px_1fr] md:gap-16">
@@ -66,6 +75,25 @@ export default function Projects() {
               <h3 className="font-serif text-xl text-ink mb-0.5">{p.title}</h3>
               <p className="font-sans text-xs text-parchment-600 italic mb-3">{p.role}</p>
               <p className="text-sm text-ink-light leading-relaxed mb-4">{p.description}</p>
+
+              {p.image && (
+                <div className="mb-4">
+                  <button
+                    onClick={() => setExpanded(expanded === i ? null : i)}
+                    className="text-xs tracking-widest uppercase text-parchment-600 hover:text-ink border-b border-parchment-300 transition-colors mb-3"
+                  >
+                    {expanded === i ? 'Close Image ↑' : 'View Dashboard ↓'}
+                  </button>
+                  {expanded === i && (
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      className="w-full rounded-sm border border-parchment-200 shadow-md mt-2"
+                    />
+                  )}
+                </div>
+              )}
+
               <div className="flex flex-wrap gap-2">
                 {p.tags.map(tag => (
                   <span

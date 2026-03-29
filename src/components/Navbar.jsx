@@ -26,19 +26,12 @@ export default function Navbar() {
               key={l.to}
               to={l.to}
               className={({ isActive }) =>
-                `nav-link ${isActive ? 'text-ink' : ''}`
+                `nav-link font-bold ${isActive ? 'text-ink' : ''}`
               }
             >
               {l.label}
             </NavLink>
           ))}
-          <a
-            href="/resume.pdf"
-            download
-            className="nav-link border border-parchment-400 px-4 py-1.5 hover:bg-parchment-200 transition-colors"
-          >
-            Download CV
-          </a>
         </nav>
 
         {/* Mobile toggle */}
@@ -59,12 +52,11 @@ export default function Navbar() {
               key={l.to}
               to={l.to}
               onClick={() => setOpen(false)}
-              className="nav-link"
+              className="nav-link font-bold"
             >
               {l.label}
             </NavLink>
           ))}
-          <a href="/resume.pdf" download className="nav-link">Download CV</a>
         </nav>
       )}
     </header>

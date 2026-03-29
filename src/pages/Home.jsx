@@ -43,10 +43,16 @@ const education = [
     period: 'Aug 2023 – May 2025',
   },
   {
-    degree: 'B.S. Statistics (Statistical Computing) & B.A. Political Science',
+    degree: 'B.S. Statistics (Statistical Computing)',
     school: 'University of Iowa',
     period: 'Aug 2020 – May 2024',
   },
+  {
+    degree: 'B.A. Political Science & Government',
+    school: 'University of Iowa',
+    period: 'Aug 2020 – May 2024',
+  },
+
 ]
 
 const skills = [
@@ -66,7 +72,7 @@ function HoverVideo() {
       loop
       muted
       playsInline
-      className="w-full aspect-square object-cover rounded-sm shadow-md border border-parchment-200 mb-6"
+      className="w-full aspect-square object-cover rounded-sm shadow-md border border-parchment-200 mb-3"
       onMouseEnter={() => videoRef.current?.play()}
       onMouseLeave={() => { videoRef.current?.pause(); videoRef.current.currentTime = 0 }}
     />
@@ -78,18 +84,18 @@ export default function Home() {
     <div className="relative">
       {/* Full-height tan panel aligned with the right aside column */}
       <div className="hidden md:block absolute top-0 right-0 bottom-0 w-[calc(480px+((100vw-1024px)/2)+32px)] -z-10" style={{background: 'linear-gradient(to right, transparent, #faf8f4 30%)'}} />
-    <div className="max-w-5xl mx-auto px-8 py-14 md:grid md:grid-cols-[1fr_280px] md:gap-16">
+    <div className="max-w-5xl mx-auto px-8 py-14 flex flex-col md:grid md:grid-cols-[1fr_280px] md:gap-16">
 
       {/* ── LEFT COLUMN ── */}
-      <main>
+      <main className="order-last md:order-first">
         {/* About snippet */}
         <section className="mb-12">
           <p className="section-label mb-4">About</p>
           <div className="divider mb-6" />
           <p className="font-serif text-lg leading-relaxed text-ink-light italic">
-            Data Scientist and statistician based in Iowa City with a background spanning energy analytics,
-            aerospace software, and public health research. I turn complex datasets into clear decisions —
-            through rigorous modeling, thoughtful visualization, and precise communication.
+           I like analytics 📈 and constantly love reading the news 📰. I am corn-fed 🌽, based from Iowa with college town roots 🎓. Go Hawks! 🐥 My previous background is in energy analytics ⚡, aerospace software ✈️, and statistical modeling 📊. I turn messy data 🧩 into notable insights 🔍 with statistically backed intuition 🧠📈, and I&apos;m often reading{" "}
+           <a href="https://apnews.com" target="_blank" rel="noreferrer" className="underline hover:text-ink transition-colors">AP News</a> 📰 or{" "}
+           <a href="https://npr.org" target="_blank" rel="noreferrer" className="underline hover:text-ink transition-colors">NPR</a> 🎧 at over-price coffee establishments. My coworkers would say I am often times a degenerate yapper 🗣️.
           </p>
           <Link to="/about" className="inline-block mt-4 text-xs tracking-widest uppercase text-parchment-600 hover:text-ink transition-colors border-b border-parchment-300">
             Read more →
@@ -120,20 +126,52 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        {/* Leadership */}
+        <section className="mt-12">
+          <p className="section-label mb-4">Leadership</p>
+          <div className="divider mb-6" />
+          <div className="space-y-4 text-sm text-ink-light">
+            <div>
+              <p className="font-medium text-ink">Founder & President — Data Science Organization, UIowa</p>
+              <p className="text-xs font-mono text-parchment-500">Mar 2023 – May 2024</p>
+              <p className="mt-1 leading-relaxed">
+                Started a club dedicated to educating students on the culture of data science.
+                Grew to 80 members; recognized and funded by the Iowa Statistics Department.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* ── RIGHT COLUMN ── */}
-      <aside className="mb-12 md:mb-0">
+      <aside className="mb-12 md:mb-0 order-first md:order-last">
         <HoverVideo />
+        <p className="text-xs text-parchment-500 italic font-serif text-left mb-4">This was taken in Aswan, Egypt in a Nubian Village (circa 2024)</p>
 
         {/* Name + title */}
         <h1 className="font-serif text-4xl leading-tight text-ink mb-1">
-          Wylan<br />Gao
+          Wylan<br />Gao (高伟伦)
         </h1>
-        <p className="section-label mb-8">Data Scientist</p>
+        <p className="text-xs tracking-widest uppercase text-parchment-600 mb-8">Will-an Gao (ENG.) · Gāo Wěi lún (CHI.)</p>
+
+        {/* Education */}
+        <div className="mt-10">
+          <p className="section-label mb-4">Education</p>
+          <div className="divider" />
+          <div className="space-y-4 mt-4">
+            {education.map((e, i) => (
+              <div key={i}>
+                <p className="text-xs text-parchment-500 font-mono mb-0.5">{e.period}</p>
+                <p className="text-sm font-medium text-ink leading-snug">{e.degree}</p>
+                <p className="text-xs text-ink-muted italic font-serif">{e.school}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Contact */}
-        <div className="divider pt-6 mb-6 space-y-2 text-sm text-ink-light font-sans">
+        <div className="divider pt-6 mb-6 space-y-2 text-sm text-ink-light font-sans mt-10">
           <p>
             <span className="font-medium text-ink">Phone</span><br />
             +1 (319) 621-8718
@@ -168,21 +206,6 @@ export default function Home() {
         >
           Download CV ↓
         </a>
-
-        {/* Education */}
-        <div className="mt-10">
-          <p className="section-label mb-4">Education</p>
-          <div className="divider" />
-          <div className="space-y-4 mt-4">
-            {education.map((e, i) => (
-              <div key={i}>
-                <p className="text-xs text-parchment-500 font-mono mb-0.5">{e.period}</p>
-                <p className="text-sm font-medium text-ink leading-snug">{e.degree}</p>
-                <p className="text-xs text-ink-muted italic font-serif">{e.school}</p>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Skills */}
         <div className="mt-10">
