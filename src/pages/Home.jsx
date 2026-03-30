@@ -71,16 +71,23 @@ function HoverVideo() {
   const videoRef = useRef(null)
 
   return (
-    <video
-      ref={videoRef}
-      src="/profilepicture.mov"
-      loop
-      muted
-      playsInline
-      className="w-full aspect-square object-cover rounded-sm shadow-md border border-parchment-200 mb-3"
-      onMouseEnter={() => videoRef.current?.play()}
-      onMouseLeave={() => { videoRef.current?.pause(); videoRef.current.currentTime = 0 }}
-    />
+    <>
+      <img
+        src="/stilliphone.png"
+        alt="Wylan Gao"
+        className="md:hidden w-full aspect-square object-cover rounded-sm shadow-md border border-parchment-200 mb-3"
+      />
+      <video
+        ref={videoRef}
+        src="/profilepicture.mov"
+        loop
+        muted
+        playsInline
+        className="hidden md:block w-full aspect-square object-cover rounded-sm shadow-md border border-parchment-200 mb-3"
+        onMouseEnter={() => videoRef.current?.play()}
+        onMouseLeave={() => { videoRef.current?.pause(); videoRef.current.currentTime = 0 }}
+      />
+    </>
   )
 }
 
