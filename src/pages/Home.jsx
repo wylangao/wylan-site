@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { useRef } from 'react'
 
 const experience = [
   {
@@ -67,23 +66,6 @@ const skills = [
   { label: 'Spoken', items: 'English (Fluent) · Chinese (Fluent)' },
   { label: 'Writing', items: 'Technical Writing · Legal Research · Public Speaking' },
 ]
-
-function HoverVideo() {
-  const videoRef = useRef(null)
-
-  return (
-    <video
-      ref={videoRef}
-      src="/profilepicture.mov"
-      loop
-      muted
-      playsInline
-      className="w-full aspect-square object-cover rounded-sm shadow-md border border-parchment-200 mb-3"
-      onMouseEnter={() => videoRef.current?.play()}
-      onMouseLeave={() => { videoRef.current?.pause(); videoRef.current.currentTime = 0 }}
-    />
-  )
-}
 
 export default function Home() {
   return (
@@ -171,8 +153,12 @@ export default function Home() {
 
       {/* ── RIGHT COLUMN ── */}
       <aside className="mb-12 md:mb-0 order-first md:order-last">
-        <HoverVideo />
-        <p className="text-xs text-parchment-500 italic font-serif text-left mb-4">This was taken in Aswan, Egypt in a Nubian Village (circa 2024)</p>
+        <img
+          src="/profilepicture.jpeg"
+          alt="Wylan Gao"
+          className="w-full aspect-square object-cover rounded-sm shadow-md border border-parchment-200 mb-3"
+        />
+        <p className="text-xs text-parchment-500 italic font-serif text-left mb-4">I wore a <a href="https://biggrove.com" target="_blank" rel="noreferrer" className="underline hover:text-ink transition-colors">Big Grove</a> Shirt, this is a local beer company in Iowa City. This photo was taken while visiting Lima, Peru. (circa 2023)</p>
 
         {/* Name + title */}
         <h1 className="font-serif text-4xl leading-tight text-ink mb-1">

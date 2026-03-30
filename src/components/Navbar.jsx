@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react'
 
 
 const links = [
+  { to: '/',         label: 'Home' },
   { to: '/about',    label: 'About' },
   { to: '/projects', label: 'Projects' },
   { to: '/resume',   label: 'Resume' },
+  { to: '/misc',     label: 'Misc' },
 ]
 
 export default function Navbar() {

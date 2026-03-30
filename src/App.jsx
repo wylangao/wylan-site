@@ -7,6 +7,7 @@ import Projects from './pages/Projects'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import Resume from './pages/Resume'
+import Misc from './pages/Misc'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/resume" element={<Resume />} />
+          <Route path="/misc" element={<Misc />} />
         </Routes>
       </main>
       <Footer />
