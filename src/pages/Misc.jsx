@@ -5,10 +5,6 @@ const videos = [
     src: '/profilepicture.mov',
     caption: 'This was taken in Aswan, Egypt in a Nubian Village (circa 2024)',
   },
-  {
-    src: '/nevadoteluco.mov',
-    caption: 'I climbed Nevado de Toluca summit was 15,350 ft (circa 2024)',
-  },
 ]
 
 function HoverVideo({ src, caption }) {
