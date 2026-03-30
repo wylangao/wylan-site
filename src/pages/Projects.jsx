@@ -12,6 +12,17 @@ const projects = [
     image: null,
   },
   {
+    title: 'Writing Sample: Geographic Database Analysis',
+    date: 'May 2024',
+    role: 'Geographic Database Systems · University of Iowa',
+    tags: ['MongoDB', 'GIS', 'Raster Data', 'Iowa', 'Database Design'],
+    description:
+      'Final project for Geographic Database Systems. Designed and queried a MongoDB database integrating Iowa raster and geospatial datasets. Analyzed spatial relationships across geographic features in Iowa, combining NoSQL database design with GIS raster analysis to surface meaningful patterns in the data. Submitted as a written analysis report.',
+    link: null,
+    pdf: '/gdb_final_proj.pdf',
+    image: null,
+  },
+  {
     title: 'Public Health: Flint Michigan Water Crisis',
     date: 'Dec 2024',
     role: 'Project Lead',
@@ -98,6 +109,25 @@ export default function Projects() {
                       src={p.image}
                       alt={p.title}
                       className="w-full rounded-sm border border-parchment-200 shadow-md mt-2"
+                    />
+                  )}
+                </div>
+              )}
+
+              {p.pdf && (
+                <div className="mb-4">
+                  <button
+                    onClick={() => setExpanded(expanded === i ? null : i)}
+                    className="text-xs tracking-widest uppercase text-parchment-600 hover:text-ink border-b border-parchment-300 transition-colors mb-3"
+                  >
+                    {expanded === i ? 'Close Writing Sample ↑' : 'View Writing Sample ↓'}
+                  </button>
+                  {expanded === i && (
+                    <iframe
+                      src={p.pdf}
+                      className="w-full rounded-sm border border-parchment-200 shadow-md mt-2"
+                      style={{ height: '600px' }}
+                      title={p.title}
                     />
                   )}
                 </div>
