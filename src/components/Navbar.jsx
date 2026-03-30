@@ -15,7 +15,7 @@ export default function Navbar() {
   useEffect(() => {
     const interval = setInterval(() => {
       setToggled(t => !t)
-    }, 25000)
+    }, 10000)
     return () => clearInterval(interval)
   }, [])
 

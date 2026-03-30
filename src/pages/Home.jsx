@@ -10,9 +10,10 @@ const experience = [
     url: 'https://www.engie-na.com',
     location: 'Iowa City, IA',
     bullets: [
-      'Forecasted peak campus energy usage in Python using multiple linear regression with best subset selection.',
-      'Built a Power BI dashboard flagging buildings with high electricity usage, replacing a 1-month manual process.',
-      'Authored a paper for the Plant Manager on detecting hot weather days that trigger exponential electricity increases.',
+      'Forecasted excessive campus energy usage in Python Notebook using multiple linear regression with best subset selection techniques.',
+      'Built a Power BI dashboard instantly flagging buildings with high electricity usage, replacing a 1-month manual process.',
+      'Presented a Paper for the Plant Manager on detecting hot weather days given temperature and humidity data that triggers a spark in electric usage using Approximation Convergence Theorem Techniques and a Jupyter Notebook for the calculations.',
+      'Led a presentation on Fuel Analysis Data Visualization for the Senior Software Developer, Project Manager, and Facilities, demonstrating how to use the dashboard to detect high fuel usage across campus.',
     ],
   },
   {
@@ -23,7 +24,7 @@ const experience = [
     url: 'https://www.collinsaerospace.com',
     location: 'Annapolis, MD',
     bullets: [
-      'Built a Python application replacing an outdated Unix Bash query for instantaneous data retrieval.',
+      'Built a Python application replacing an outdated Unix Bash query for instantaneous data retrieval for the FAA requirement on Documented Flight Plans.',
       'Developed a Tkinter frontend with PyODBC backend to manage queries on a PostgreSQL database.',
       'Presented to key engineers on an application streamlining flight plan package retrieval.',
     ],
@@ -97,10 +98,13 @@ export default function Home() {
         <section className="mb-12">
           <p className="section-label mb-4">About</p>
           <div className="divider mb-6" />
+          <p className="font-serif text-lg leading-relaxed text-ink-light mb-4">
+            <strong>Currently, I am <span className="bg-yellow-100/50">looking</span> for work!</strong>
+          </p>
           <p className="font-serif text-lg leading-relaxed text-ink-light">
-           I like analytics and constantly love reading the news. I am corn-fed, based from Iowa with college town roots. Go Hawks! My previous background is in energy analytics, aerospace software, and statistical modeling. I turn messy data into notable insights with statistically backed intuition, and I&apos;m often reading{" "}
-           <a href="https://apnews.com" target="_blank" rel="noreferrer" className="underline hover:text-ink transition-colors">AP News</a> or{" "}
-           <a href="https://npr.org" target="_blank" rel="noreferrer" className="underline hover:text-ink transition-colors">NPR</a> at over-price coffee establishments. My coworkers would say I am often times a degenerate yapper.
+            I enjoy working with analytics and I love reading the news. I am corn-fed, born and raised in Iowa City, Iowa. My previous work is in energy analytics, aerospace software, and statistical modeling. I enjoy collecting obscure datapoints and turning them into notable insights. In my spare time, I like to read{" "}
+            <a href="https://apnews.com" target="_blank" rel="noreferrer" className="underline hover:text-ink transition-colors">AP News</a> and{" "}
+            <a href="https://npr.org" target="_blank" rel="noreferrer" className="underline hover:text-ink transition-colors">NPR</a> at the Java House Coffee.
           </p>
           <Link to="/about" className="inline-block mt-4 text-xs tracking-widest uppercase text-parchment-600 hover:text-ink transition-colors border-b border-parchment-300">
             Read more →
