@@ -63,8 +63,7 @@ export default function Projects() {
           <h2 className="font-serif text-3xl text-ink mb-1">Projects</h2>
           <p className="section-label">Selected Work</p>
           <p className="mt-6 text-sm text-ink-muted leading-relaxed">
-            A selection of research, competitions, and applied data science projects across
-            public health, aerospace, energy, and legal analytics.
+            These are some of my projects I did throughout University as well companies I have worked for.
           </p>
         </aside>
 

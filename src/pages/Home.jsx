@@ -150,13 +150,16 @@ export default function Home() {
           <p className="section-label mb-4">Leadership</p>
           <div className="divider mb-6" />
           <div className="space-y-4 text-sm text-ink-light">
-            <div>
-              <p className="font-medium text-ink">Founder & President — Data Science Organization, UIowa</p>
-              <p className="text-xs font-mono text-parchment-500">Mar 2023 – May 2024</p>
-              <p className="mt-1 leading-relaxed">
-                Started a club dedicated to educating students on the culture of data science.
-                Grew to 80 members; recognized and funded by the Iowa Statistics Department.
-              </p>
+            <div className="flex gap-4 items-start">
+              <div className="flex-1">
+                <p className="text-xs font-mono text-parchment-500 mb-1">Mar 2023 – May 2024</p>
+                <p className="font-bold text-ink text-sm">Founder & President</p>
+                <p className="font-serif italic text-parchment-600 text-sm mb-3">Data Science Organization, University of Iowa</p>
+                <p className="text-sm text-ink-light leading-relaxed">
+                  Started a club dedicated to educating students on the culture of data science.
+                  Grew to 80 members; recognized and funded by the Iowa Statistics Department.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -199,10 +202,6 @@ export default function Home() {
             <a href="mailto:gaowylan@gmail.com" className="hover:text-parchment-700 transition-colors">
               gaowylan@gmail.com
             </a>
-          </p>
-          <p>
-            <span className="font-medium text-ink">Location</span><br />
-            Iowa City, IA
           </p>
           <p>
             <a
