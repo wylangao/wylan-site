@@ -62,7 +62,8 @@ const education = [
 
 const skills = [
   { label: 'Languages', items: 'Python · SQL · R · SAS · PowerBI · Unix' },
-  { label: 'Data Tools', items: 'STATA · SAS · PI System · Excel · GIS · Statistical Learning' },
+  { label: 'Data Tools', items: 'STATA · SAS · PI System · Excel · GIS · Statistical Learning · Jupyter Notebook' },
+  { label: 'AI Tools', items: 'Claude Code · ChatGPT · Gemini' },
   { label: 'Spoken', items: 'English (Fluent) · Chinese (Fluent)' },
   { label: 'Writing', items: 'Technical Writing · Legal Research · Public Speaking' },
 ]
