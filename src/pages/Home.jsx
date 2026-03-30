@@ -6,6 +6,8 @@ const experience = [
     period: 'Apr 2023 – Aug 2025',
     role: 'Energy Data Scientist Intern',
     org: 'ENGIE North America',
+    logo: '/engielogo.png',
+    url: 'https://www.engie-na.com',
     location: 'Iowa City, IA',
     bullets: [
       'Forecasted peak campus energy usage in Python using multiple linear regression with best subset selection.',
@@ -17,6 +19,8 @@ const experience = [
     period: 'May 2024 – Aug 2024',
     role: 'Software Engineer Intern',
     org: 'Collins Aerospace',
+    logo: '/CollinsLogo.png',
+    url: 'https://www.collinsaerospace.com',
     location: 'Annapolis, MD',
     bullets: [
       'Built a Python application replacing an outdated Unix Bash query for instantaneous data retrieval.',
@@ -28,6 +32,7 @@ const experience = [
     period: 'Jun 2021 – Aug 2021',
     role: 'AmeriCorps Member',
     org: 'Johnson Foundation – AmeriCorps VISTA',
+    logo: null,
     location: 'Cedar Rapids, IA',
     bullets: [
       'Co-designed curriculum for 100 students at the Leaders Believers Achievers summer camp.',
@@ -92,10 +97,10 @@ export default function Home() {
         <section className="mb-12">
           <p className="section-label mb-4">About</p>
           <div className="divider mb-6" />
-          <p className="font-serif text-lg leading-relaxed text-ink-light italic">
-           I like analytics 📈 and constantly love reading the news 📰. I am corn-fed 🌽, based from Iowa with college town roots 🎓. Go Hawks! 🐥 My previous background is in energy analytics ⚡, aerospace software ✈️, and statistical modeling 📊. I turn messy data 🧩 into notable insights 🔍 with statistically backed intuition 🧠📈, and I&apos;m often reading{" "}
-           <a href="https://apnews.com" target="_blank" rel="noreferrer" className="underline hover:text-ink transition-colors">AP News</a> 📰 or{" "}
-           <a href="https://npr.org" target="_blank" rel="noreferrer" className="underline hover:text-ink transition-colors">NPR</a> 🎧 at over-price coffee establishments. My coworkers would say I am often times a degenerate yapper 🗣️.
+          <p className="font-serif text-lg leading-relaxed text-ink-light">
+           I like analytics and constantly love reading the news. I am corn-fed, based from Iowa with college town roots. Go Hawks! My previous background is in energy analytics, aerospace software, and statistical modeling. I turn messy data into notable insights with statistically backed intuition, and I&apos;m often reading{" "}
+           <a href="https://apnews.com" target="_blank" rel="noreferrer" className="underline hover:text-ink transition-colors">AP News</a> or{" "}
+           <a href="https://npr.org" target="_blank" rel="noreferrer" className="underline hover:text-ink transition-colors">NPR</a> at over-price coffee establishments. My coworkers would say I am often times a degenerate yapper.
           </p>
           <Link to="/about" className="inline-block mt-4 text-xs tracking-widest uppercase text-parchment-600 hover:text-ink transition-colors border-b border-parchment-300">
             Read more →
@@ -108,20 +113,33 @@ export default function Home() {
           <div className="divider mb-6" />
           <div className="space-y-10">
             {experience.map((job, i) => (
-              <div key={i}>
-                <p className="text-xs font-mono text-parchment-500 mb-1">{job.period}</p>
-                <p className="font-medium text-ink text-sm">{job.role}</p>
-                <p className="font-serif italic text-parchment-600 text-sm mb-3">
-                  {job.org} · {job.location}
-                </p>
-                <ul className="space-y-1.5">
-                  {job.bullets.map((b, j) => (
-                    <li key={j} className="text-sm text-ink-light leading-relaxed flex gap-2">
-                      <span className="text-parchment-400 mt-1 shrink-0">—</span>
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div key={i} className="flex gap-4 items-start">
+                <div className="flex-1">
+                  <p className="text-xs font-mono text-parchment-500 mb-1">{job.period}</p>
+                  <p className="font-bold text-ink text-sm mb-0.5">{job.role}</p>
+                  <p className="font-serif italic text-parchment-600 text-sm mb-3">
+                    {job.org} · {job.location}
+                  </p>
+                  <ul className="space-y-1.5">
+                    {job.bullets.map((b, j) => (
+                      <li key={j} className="text-sm text-ink-light leading-relaxed flex gap-2">
+                        <span className="text-parchment-400 mt-1 shrink-0">—</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {job.logo && (
+                  <div className="shrink-0">
+                    {job.url ? (
+                      <a href={job.url} target="_blank" rel="noreferrer">
+                        <img src={job.logo} alt={job.org} className="h-16 w-16 object-contain rounded-full border border-parchment-200 bg-white p-1 hover:animate-spin" />
+                      </a>
+                    ) : (
+                      <img src={job.logo} alt={job.org} className="h-16 w-16 object-contain rounded-full border border-parchment-200 bg-white p-1" />
+                    )}
+                  </div>
+                )}
               </div>
             ))}
           </div>

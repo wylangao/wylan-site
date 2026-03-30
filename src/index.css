@@ -23,7 +23,8 @@
 
 @layer components {
   .section-label {
-    @apply text-xs tracking-widest2 uppercase font-sans font-medium text-parchment-600;
+    @apply tracking-widest2 uppercase font-sans font-bold text-parchment-600;
+    font-size: 16px;
   }
 
   .divider {
