@@ -2,6 +2,16 @@ import { useState } from 'react'
 
 const projects = [
   {
+    title: 'Personal Website Christopher Cumberbatch',
+    date: 'Mar 2025',
+    role: 'Frontend Developer',
+    tags: ['React', 'Vite', 'JavaScript', 'HTML/CSS'],
+    description:
+      'Designed and developed a personal advocacy website for Christopher Cumberbatch — Iowa Law student (Class of 2027) and 2nd Lieutenant in the Iowa Army National Guard. Scoped requirements directly with the client to define content hierarchy and brand identity. Architected a component-based frontend in React 18 using Vite for fast bundling and hot module replacement. Structured the site around a single-page layout optimized for public-facing presence and future content expansion.',
+    link: 'https://christophercumberbatch.com',
+    image: null,
+  },
+  {
     title: 'Public Health: Flint Michigan Water Crisis',
     date: 'Dec 2024',
     role: 'Project Lead',

@@ -1,5 +1,5 @@
 import { NavLink, Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 const links = [
@@ -10,7 +10,14 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
-  const [hovered, setHovered] = useState(false)
+  const [toggled, setToggled] = useState(false)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setToggled(t => !t)
+    }, 25000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <header className="border-b border-parchment-200 px-8 py-5">
@@ -18,14 +25,10 @@ export default function Navbar() {
         {/* Wordmark */}
         <Link to="/" className="font-serif tracking-tight text-ink" style={{fontSize: '42px'}}>
           wylan
-          <span
-            className="relative inline-block cursor-default"
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-          >
-            <span className={`inline-block bg-yellow-100/50 px-0.5 transition-all duration-300 ${hovered ? 'translate-y-4 opacity-0' : ''}`}>gao</span>
-            <span className={`inline-block transition-all duration-300 ${hovered ? 'translate-y-4 opacity-0' : ''}`}>.</span>
-            <span className={`absolute left-0 top-0 transition-all duration-300 ${hovered ? 'opacity-100' : 'opacity-0'}`}>&nbsp;&nbsp;is&nbsp;&nbsp;</span>
+          <span className="relative inline-block">
+            <span className={`inline-block bg-yellow-100/50 px-0.5 transition-all duration-500 ${toggled ? 'translate-y-4 opacity-0' : ''}`}>gao</span>
+            <span className={`inline-block transition-all duration-500 ${toggled ? 'translate-y-4 opacity-0' : ''}`}>.</span>
+            <span className={`absolute left-0 top-0 transition-all duration-500 ${toggled ? 'opacity-100' : 'opacity-0'}`}>&nbsp;&nbsp;is&nbsp;&nbsp;</span>
           </span>me
         </Link>
 
